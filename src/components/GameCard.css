@@ -1,0 +1,130 @@
+.game-card {
+    display: flex;
+    align-items: center;
+    background: var(--game-card-bg);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--game-card-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--game-card-shadow-hover);
+}
+
+/* Variant-specific backgrounds and accents */
+.botw-card {
+    background: var(--game-card-botw-bg);
+}
+
+.botw-card:hover {
+    border-color: var(--game-card-botw-accent);
+}
+
+.botw-card .game-card-arrow {
+    color: var(--game-card-botw-accent);
+}
+
+.totk-card {
+    background: var(--game-card-totk-bg);
+    border-color: var(--game-card-totk-border);
+}
+
+.totk-card:hover {
+    border-color: var(--game-card-totk-accent);
+}
+
+.totk-card .game-card-arrow {
+    color: var(--game-card-totk-accent);
+}
+
+.game-card-logo-wrapper {
+    flex: 0 0 120px;
+    margin-right: 20px;
+}
+
+.game-card-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: var(--game-card-logo-shadow);
+}
+
+.game-card-content {
+    flex: 1;
+}
+
+.game-card-content h2 {
+    font-family: 'Hylia Serif Beta', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    background: var(--gold-effect);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.botw-card .game-card-content h2 {
+    color: var(--accent-color);
+}
+
+.totk-card .game-card-content h2 {
+    color: var(--accent-color);
+}
+
+.game-card-content p {
+    color: var(--game-card-desc-text);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.game-card-arrow {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    opacity: 0.5;
+    color: var(--accent-color);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.game-card:hover .game-card-arrow {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.game-card-arrow polyline {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (min-width: 768px) {
+    .game-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        flex: 1;
+    }
+
+    .game-card-logo-wrapper {
+        margin-right: 0;
+        margin-bottom: 20px;
+        flex: 0 0 160px;
+    }
+
+    .game-card-arrow {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,132 @@
+/* Action buttons shared styles */
+.detail-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn--action {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn--action:active {
+    transform: scale(0.95);
+}
+
+#compendium-detail .detail-actions .btn--icon {
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: none;
+    background: var(--surface-overlay);
+}
+
+#compendium-detail .detail-actions .btn--icon .mdi {
+    font-size: 1rem;
+    display: block;
+    line-height: 1;
+    margin: 0;
+}
+
+.btn--edit-sm.btn--botw {
+    color: var(--edit-green);
+}
+
+.btn--edit-sm.btn--totk {
+    color: var(--edit-totk);
+}
+
+.btn--delete-sm {
+    color: var(--delete-red);
+}
+
+.btn--delete-confirm-sm {
+    color: var(--delete-red);
+    background: none;
+}
+
+.btn--cancel-sm {
+    color: var(--cancel-dark);
+    background: none;
+}
+
+/* Hover effects for the icons */
+#compendium-detail .detail-actions .btn--edit-sm.btn--botw:hover {
+    background: var(--edit-green-bg);
+}
+
+#compendium-detail .detail-actions .btn--edit-sm.btn--totk:hover {
+    background: var(--edit-totk-bg);
+}
+
+#compendium-detail .detail-actions .btn--edit-sm.btn--botw:hover .mdi {
+    color: var(--edit-green);
+}
+
+#compendium-detail .detail-actions .btn--edit-sm.btn--totk:hover .mdi {
+    color: var(--edit-totk);
+}
+
+#compendium-detail .detail-actions .btn--delete-sm:hover,
+#compendium-detail .detail-actions .btn--delete-confirm-sm:hover {
+    background: var(--delete-red-bg);
+}
+
+#compendium-detail .detail-actions .btn--delete-sm:hover .mdi,
+#compendium-detail .detail-actions .btn--delete-confirm-sm:hover .mdi {
+    color: var(--delete-red);
+}
+
+.btn--cancel-sm:hover {
+    background: var(--cancel-bg);
+}
+
+.delete-confirm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.delete-confirm--icon-only {
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* Responsive adjustment so buttons don't overlap title */
+@media (max-width: 600px) {
+    .detail-actions {
+        top: 15px;
+        right: 15px;
+    }
+}

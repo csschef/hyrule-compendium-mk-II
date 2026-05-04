@@ -1,9 +1,11 @@
 import apiClient from "./axiosConfig";
 
 // Hämta alla items från API
-export async function getAll(category = "all") {
+export async function getAll(game = "botw") {
 	try {
-		const response = await apiClient.get(`/compendium/${category}`);
+		const response = await apiClient.get("/compendium/all", {
+			params: { game },
+		});
 		// API:et returnerar data i response.data.data
 		return response.data.data;
 	} catch (error) {
@@ -11,15 +13,18 @@ export async function getAll(category = "all") {
 	}
 }
 
-// Hämta en specifik item via id och kategori
-export async function getById(category, id) {
+// Hämta en specifik item via id
+export async function getById(id, game = "botw") {
 	try {
-		const response = await apiClient.get(`/compendium/${category}/${id}`);
+		const response = await apiClient.get(`/compendium/entry/${id}`, {
+			params: { game },
+		});
 		return response.data.data;
 	} catch (error) {
 		throw new Error(`Failed to fetch item: ${error.message}`);
 	}
 }
+
 
 // Skapa ny item (hanteras i state, ej API)
 export function create(data) {

@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import ListPage from './pages/ListPage'
+import DetailPage from './pages/DetailPage'
+import CreateEntryPage from './pages/CreateEntryPage'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className="App">
-        <h1>Välkommen till Hyrule Compendium Mk-II</h1>
-        <p>Detta är en webbapplikation som visar information om olika varelser, vapen och utrustning i The Legend of Zelda: Breath of the Wild och The Legend of Zelda: Tears of the Kingdom.</p>
-      </div>
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/:game/entries" element={<ListPage />} />
+      <Route path="/:game/entries/create" element={<CreateEntryPage />} />
+      <Route path="/:game/entries/:id" element={<DetailPage />} />
+    </Routes>
   )
 }
 

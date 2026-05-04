@@ -1,0 +1,27 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.home-header {
+    margin-bottom: 40px;
+}
+
+.game-select {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+}
+
+@media (min-width: 768px) {
+    .game-select {
+        flex-direction: row;
+        gap: 40px;
+    }
+    /* Component-specific layout handled in src/components/GameCard.css */
+}
