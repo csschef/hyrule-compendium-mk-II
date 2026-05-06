@@ -60,7 +60,7 @@
 }
 
 .btn--edit-sm.btn--totk {
-    color: var(--edit-totk);
+    color: var(--edit-green);
 }
 
 .btn--delete-sm {
@@ -83,7 +83,7 @@
 }
 
 #compendium-detail .detail-actions .btn--edit-sm.btn--totk:hover {
-    background: var(--edit-totk-bg);
+    background: var(--edit-green-bg);
 }
 
 #compendium-detail .detail-actions .btn--edit-sm.btn--botw:hover .mdi {
@@ -91,7 +91,7 @@
 }
 
 #compendium-detail .detail-actions .btn--edit-sm.btn--totk:hover .mdi {
-    color: var(--edit-totk);
+    color: var(--edit-green);
 }
 
 #compendium-detail .detail-actions .btn--delete-sm:hover,
