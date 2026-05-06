@@ -117,7 +117,10 @@ body {
     max-width: 100%;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
     background: #0d0d0d; /* Base dark */
+    overflow-x: hidden;
 }
 
 /* Page-specific background overlays */
@@ -134,6 +137,14 @@ body[data-game="botw"] {
 body[data-game="totk"] {
     background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.65) 100%), linear-gradient(160deg, #10526e, #03121a);
     background-attachment: fixed;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    body[data-page="home"],
+    body[data-game="botw"],
+    body[data-game="totk"] {
+        background-attachment: scroll;
+    }
 }
 
 /* Subtle pattern overlay for home, list, and detail pages */
@@ -156,6 +167,14 @@ body[data-game="totk"] {
     opacity: 0.03;
     pointer-events: none;
     z-index: 0;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .home-page::before,
+    .list-page::before,
+    .detail-page::before {
+        position: absolute;
+    }
 }
 
 /* Ensure page content sits above the pattern */
