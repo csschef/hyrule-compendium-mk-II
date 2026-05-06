@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { getById } from '../api/dataApi'
 import { useCompendium } from '../context/CompendiumContext'
 import Nav from '../components/Nav'
@@ -109,10 +109,10 @@ export default function DetailPage() {
 
             {isEditing ? (
               <div id="compendium-detail">
-                <Link to={`/${game}/entries`} className="detail-back-button detail-back-button--mobile" aria-label="Back to entries">
+                <button type="button" className="detail-back-button detail-back-button--mobile" onClick={handleEditCancel} aria-label="Back to entry details">
                   <i className="mdi mdi-arrow-left"></i>
                   <span>Back</span>
-                </Link>
+                </button>
                 <h2 className="detail-title">Editing: {mergedEntry.name}</h2>
                 <ItemForm
                   initialData={mergedEntry}
