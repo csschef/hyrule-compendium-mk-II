@@ -65,7 +65,6 @@
     --item-card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     --item-card-shadow-hover: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     --item-card-title: #000000;
-    --item-card-overlay: radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.12) 20%, rgba(255, 255, 255, 0.05) 40%, transparent 60%);
     --game-card-bg: linear-gradient(#141414cc 0%, #0a0a0af2 100%);
     --game-card-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     --game-card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.7);

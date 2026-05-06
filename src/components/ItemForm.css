@@ -262,7 +262,7 @@
     border-color: var(--cancel-button-hover-border);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .form-row {
         flex-direction: column;
         gap: 15px;

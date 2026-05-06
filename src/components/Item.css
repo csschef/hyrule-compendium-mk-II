@@ -24,8 +24,6 @@
     position: relative;
     overflow: hidden;
     background: var(--item-card-bg);
-    background-size: 200% 200%;
-    animation: subtleShimmer 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
     padding: 10px;
     text-align: center;
     box-shadow: var(--item-card-shadow);
@@ -41,20 +39,6 @@
 .compendium-item:hover {
     box-shadow: var(--item-card-shadow-hover);
     transform: scale(1.05);
-}
-
-@keyframes subtleShimmer {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.compendium-item::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: var(--item-card-overlay);
 }
 
 .compendium-item img {

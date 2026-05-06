@@ -1,6 +1,6 @@
 import CustomSelect from './CustomSelect'
 
-export default function TagSelector({ items, available, onAdd, onRemove, placeholder, capitalize = false }) {
+export default function TagSelector({ items, available, onAdd, onRemove, placeholder, capitalize = false, searchable = false }) {
   const fmt = (s) => capitalize ? s.charAt(0).toUpperCase() + s.slice(1) : s
 
   return (
@@ -19,6 +19,7 @@ export default function TagSelector({ items, available, onAdd, onRemove, placeho
         value="" 
         onChange={onAdd} 
         placeholder={placeholder}
+        searchable={searchable}
         options={[
           { value: '', label: placeholder },
           ...available.map(opt => ({ value: opt, label: fmt(opt) }))

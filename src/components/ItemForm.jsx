@@ -157,17 +157,15 @@ export default function ItemForm({ initialData = {}, onSave, onCancel, isCreate 
         <input required className="edit-input" name="name" value={form.name} onChange={handleChange} aria-label="Name" />
       </FormField>
 
-      {isCreate && (
-        <FormField icon="mdi-image" label="Image URL (Optional)">
-          <input
-            className="edit-input"
-            name="image"
-            value={form.image}
-            onChange={handleChange}
-            placeholder="https://..."
-          />
-        </FormField>
-      )}
+      <FormField icon="mdi-image" label="Image URL (Optional)">
+        <input
+          className="edit-input"
+          name="image"
+          value={form.image}
+          onChange={handleChange}
+          placeholder="https://..."
+        />
+      </FormField>
 
       <FormField icon="mdi-text" label="Description">
         <textarea required className="edit-input edit-textarea" name="description" value={form.description} onChange={handleChange} rows={4} />
@@ -236,6 +234,7 @@ export default function ItemForm({ initialData = {}, onSave, onCancel, isCreate 
           onAdd={handleDropAdd}
           onRemove={removeDrop}
           placeholder={availableDrops.length ? '-- Select a drop to add --' : 'Loading drops...'}
+          searchable
           capitalize
         />
       </FormField>

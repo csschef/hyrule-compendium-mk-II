@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 
-export default function CustomSelect({ name, value, onChange, options, placeholder = "Select..." }) {
+export default function CustomSelect({ name, value, onChange, options, placeholder = "Select...", searchable = false }) {
   const [isOpen, setIsOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [openUpward, setOpenUpward] = useState(false)
@@ -47,7 +47,7 @@ export default function CustomSelect({ name, value, onChange, options, placehold
   const displayLabel = selectedOption && selectedOption.value !== '' ? selectedOption.label : placeholder
   const filteredOptions = options.filter(opt => {
     if (opt.value === '') return false
-    if (!searchTerm) return true
+    if (!searchable || !searchTerm) return true
     return opt.label.toLowerCase().includes(searchTerm.toLowerCase())
   })
 
@@ -62,14 +62,16 @@ export default function CustomSelect({ name, value, onChange, options, placehold
       </div>
       {isOpen && (
         <div className={`custom-select__dropdown ${openUpward ? 'custom-select__dropdown--up' : ''}`}>
-          <input
-            className="custom-select__search"
-            type="text"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Type to filter..."
-            autoFocus
-          />
+          {searchable && (
+            <input
+              className="custom-select__search"
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Type to filter..."
+              autoFocus
+            />
+          )}
           {filteredOptions.length > 0 ? filteredOptions.map(opt => {
             return (
               <div 

@@ -44,9 +44,11 @@
 #compendium-detail .detail-image {
     width: 100%;
     max-width: 280px;
-    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
     border-radius: 5px;
     margin-bottom: 10px;
+    display: block;
 }
 
 #compendium-detail .detail-description {
