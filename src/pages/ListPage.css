@@ -10,6 +10,8 @@
     align-items: center;
     padding: 20px;
     text-align: center;
+    position: relative;
+    z-index: 20;
 }
 
 .list-title {
@@ -26,6 +28,8 @@
     margin: 20px auto;
     gap: 20px;
     width: 100%;
+    position: relative;
+    z-index: 20;
 }
 
 .search-container input {
@@ -68,7 +72,7 @@
     background-color: var(--accent-color);
     min-width: 160px;
     box-shadow: 0 4px 8px var(--list-dropdown-shadow);
-    z-index: 10;
+    z-index: 50;
     border-radius: 0 0 5px 5px;
     margin-top: 0;
     padding-bottom: 10px;

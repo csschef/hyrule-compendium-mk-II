@@ -3,6 +3,7 @@ import './ListPage.css'
 import { useParams } from 'react-router-dom'
 import { getAll } from '../api/dataApi'
 import { useCompendium } from '../context/CompendiumContext'
+import { usePageTitle } from '../hooks/usePageTitle'
 import Nav from '../components/Nav'
 import ItemList from '../components/ItemList'
 import loadingGif from '../assets/loading.gif'
@@ -19,6 +20,7 @@ const CATEGORIES = ['all', 'creatures', 'equipment', 'materials', 'monsters', 't
 export default function ListPage() {
   const { game } = useParams()
   const { deletedIds, updatedEntries, createdEntries } = useCompendium()
+  usePageTitle(`Entries - ${GAME_LABELS[game]}`)
 
   const [allEntries, setAllEntries] = useState([])
   const [loading, setLoading] = useState(true)

@@ -3,8 +3,11 @@ import './HomePage.css'
 import GameCard from '../components/GameCard'
 import botwLogo from '../assets/img/botw.png'
 import totkLogo from '../assets/img/totk.png'
+import { usePageTitle } from '../hooks/usePageTitle'
 
 export default function HomePage() {
+  usePageTitle('Hyrule Compendium')
+
   useEffect(() => {
     document.body.dataset.page = 'home'
     return () => { delete document.body.dataset.page }

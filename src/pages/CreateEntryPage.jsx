@@ -1,13 +1,21 @@
 import { useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useCompendium } from '../context/CompendiumContext'
+import { usePageTitle } from '../hooks/usePageTitle'
 import Nav from '../components/Nav'
 import ItemForm from '../components/ItemForm'
+
+const GAME_LABELS = {
+  botw: 'Breath of the Wild',
+  totk: 'Tears of the Kingdom',
+}
 
 export default function CreateEntryPage() {
   const { game } = useParams()
   const navigate = useNavigate()
   const { createEntry } = useCompendium()
+
+  usePageTitle(`New Entry - ${GAME_LABELS[game]}`)
 
   useEffect(() => {
     document.body.dataset.game = game

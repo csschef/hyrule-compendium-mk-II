@@ -2,10 +2,16 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getById } from '../api/dataApi'
 import { useCompendium } from '../context/CompendiumContext'
+import { usePageTitle } from '../hooks/usePageTitle'
 import Nav from '../components/Nav'
 import ItemDetails from '../components/ItemDetails'
 import ItemForm from '../components/ItemForm'
 import loadingGif from '../assets/loading.gif'
+
+const GAME_LABELS = {
+  botw: 'Breath of the Wild',
+  totk: 'Tears of the Kingdom',
+}
 
 export default function DetailPage() {
   const { game, id } = useParams()
@@ -21,6 +27,10 @@ export default function DetailPage() {
 
   // Edit state
   const [isEditing, setIsEditing] = useState(false)
+
+  // Update page title when entry loads
+  const titleText = entry ? `${entry.name} - ${GAME_LABELS[game]}` : `Loading...`
+  usePageTitle(titleText)
 
   // Set body background to match game
   useEffect(() => {
