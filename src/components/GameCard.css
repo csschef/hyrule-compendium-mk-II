@@ -1,5 +1,6 @@
 .game-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
     background: var(--game-card-bg);
     border: 1px solid transparent;
@@ -11,6 +12,7 @@
     box-shadow: var(--game-card-shadow);
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .game-card:hover {
@@ -45,8 +47,9 @@
 }
 
 .game-card-logo-wrapper {
-    flex: 0 0 120px;
-    margin-right: 20px;
+    flex: 0 0 160px;
+    margin-right: 0;
+    margin-bottom: 20px;
 }
 
 .game-card-logo {
@@ -89,10 +92,14 @@
 .game-card-arrow {
     width: 24px;
     height: 24px;
-    margin-left: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin: 0;
     opacity: 0.5;
     color: var(--accent-color);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none;
 }
 
 .game-card:hover .game-card-arrow {
@@ -107,25 +114,13 @@
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-
 @media (min-width: 768px) {
     .game-card {
-        flex-direction: column;
-        text-align: center;
         padding: 40px 20px;
         flex: 1;
     }
 
-    .game-card-logo-wrapper {
-        margin-right: 0;
-        margin-bottom: 20px;
-        flex: 0 0 160px;
-    }
-
     .game-card-arrow {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        margin: 0;
+        display: block;
     }
 }
