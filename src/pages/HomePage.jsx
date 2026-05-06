@@ -14,6 +14,7 @@ export default function HomePage() {
     <main className="home-page">
       <header className="home-header">
         <h1 className="title gold-text">Hyrule Compendium</h1>
+        <h2 className="gold-text">The encyclopedia of all the in-game interactive items in Breath of the Wild and Tears of the Kingdom</h2>
       </header>
 
       <section className="game-select">
