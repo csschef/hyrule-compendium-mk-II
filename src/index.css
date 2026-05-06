@@ -209,9 +209,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .loading-gif {
-    width: 60px;
-    height: 60px;
-    filter: sepia(1) hue-rotate(5deg) saturate(3);
+    width: 150px;
+    height: 150px;
 }
 
 .mdi {
