@@ -8,7 +8,7 @@ import Nav from '../components/Nav'
 import ItemList from '../components/ItemList'
 import loadingGif from '../assets/loading.gif'
 
-const ITEMS_PER_PAGE = 20
+const ITEMS_PER_PAGE = 12
 
 const GAME_LABELS = {
   botw: 'Breath of the Wild',

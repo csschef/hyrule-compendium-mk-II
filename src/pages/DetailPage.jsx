@@ -71,7 +71,7 @@ export default function DetailPage() {
     ? mergeEntry(entry, updatedEntries[Number(id)])
     : null
 
-  // ── Handlers ────────────────────────────────────────────
+  // Handlers
 
   function handleDeleteClick() {
     if (deleteStep === 0) {
@@ -93,7 +93,7 @@ export default function DetailPage() {
     setIsEditing(false)
   }
 
-  // ── Render ───────────────────────────────────────────────
+  // Render
 
   return (
     <>
