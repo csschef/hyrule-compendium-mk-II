@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useCompendium } from '../context/CompendiumContext'
 import Nav from '../components/Nav'
 import ItemForm from '../components/ItemForm'
@@ -30,6 +30,10 @@ export default function CreateEntryPage() {
       <Nav game={game} backLink={`/${game}/entries`} hideLinks title="Create Entry" />
       <main className="detail-page" style={{ display: 'flex', justifyContent: 'center' }}>
         <div id="compendium-detail" style={{ width: '100%', marginTop: '20px' }}>
+          <Link to={`/${game}/entries`} className="detail-back-button detail-back-button--mobile" aria-label="Back to entries">
+            <i className="mdi mdi-arrow-left"></i>
+            <span>Back</span>
+          </Link>
           <h2 className="detail-title">New Entry</h2>
           <ItemForm isCreate game={game} onSave={handleSave} onCancel={handleCancel} />
         </div>

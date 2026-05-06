@@ -1,7 +1,8 @@
 // Renders entry details dynamically based on category.
+import { Link } from 'react-router-dom'
 import './ItemDetails.css'
 
-export default function ItemDetails({ entry, actions }) {
+export default function ItemDetails({ entry, actions, backLink }) {
   const {
     name,
     category,
@@ -30,6 +31,12 @@ export default function ItemDetails({ entry, actions }) {
 
   return (
     <div id="compendium-detail">
+      {backLink && (
+        <Link to={backLink} className="detail-back-button detail-back-button--mobile" aria-label="Back to entries">
+          <i className="mdi mdi-arrow-left"></i>
+          <span>Back</span>
+        </Link>
+      )}
       {actions && (
         <div className="detail-actions">{actions}</div>
       )}

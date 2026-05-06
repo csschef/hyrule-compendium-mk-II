@@ -109,6 +109,10 @@ export default function DetailPage() {
 
             {isEditing ? (
               <div id="compendium-detail">
+                <Link to={`/${game}/entries`} className="detail-back-button detail-back-button--mobile" aria-label="Back to entries">
+                  <i className="mdi mdi-arrow-left"></i>
+                  <span>Back</span>
+                </Link>
                 <h2 className="detail-title">Editing: {mergedEntry.name}</h2>
                 <ItemForm
                   initialData={mergedEntry}
@@ -121,6 +125,7 @@ export default function DetailPage() {
             ) : (
               <ItemDetails
                 entry={mergedEntry}
+                backLink={`/${game}/entries`}
                 actions={
                   deleteStep === 0 ? (
                     <>

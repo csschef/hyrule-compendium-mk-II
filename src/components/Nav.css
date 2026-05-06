@@ -73,3 +73,13 @@
     color: var(--nav-link-active-totk-text);
 }
 
+@media (max-width: 767px) {
+    .list-nav--centered {
+        display: none;
+    }
+
+    .nav-link--back {
+        display: none;
+    }
+}
+

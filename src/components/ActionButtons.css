@@ -77,6 +77,10 @@
     background: none;
 }
 
+.detail-back-button--mobile {
+    display: none;
+}
+
 /* Hover effects for the icons */
 #compendium-detail .detail-actions .btn--edit-sm.btn--botw:hover {
     background: var(--edit-green-bg);
@@ -108,6 +112,37 @@
     background: var(--cancel-bg);
 }
 
+#compendium-detail .detail-back-button--mobile {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 11;
+    align-items: center;
+    gap: 8px;
+    height: 30px;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: none;
+    background: var(--surface-overlay);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+#compendium-detail .detail-back-button--mobile .mdi {
+    margin-right: 0;
+    font-size: 1rem;
+    color: inherit;
+}
+
+#compendium-detail .detail-back-button--mobile:hover {
+    border-color: var(--nav-link-hover-border);
+    color: var(--nav-link-hover-text);
+}
+
 .delete-confirm {
     display: flex;
     flex-direction: row;
@@ -124,9 +159,24 @@
 }
 
 /* Responsive adjustment so buttons don't overlap title */
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .detail-actions {
         top: 15px;
         right: 15px;
+    }
+
+    .detail-back-button--mobile {
+        display: inline-flex;
+    }
+
+    #compendium-detail .detail-back-button--mobile {
+        top: 15px;
+        left: 15px;
+        height: 30px;
+        min-height: 30px;
+    }
+
+    #compendium-detail {
+        margin-top: 0 !important;
     }
 }
