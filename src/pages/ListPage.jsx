@@ -38,6 +38,11 @@ export default function ListPage() {
     return () => { delete document.body.dataset.game }
   }, [game])
 
+  // Scroll to top when game changes
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [game])
+
   // Fetch entries whenever the game changes
   useEffect(() => {
     setLoading(true)
