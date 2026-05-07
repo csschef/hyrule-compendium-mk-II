@@ -18,7 +18,7 @@ This is a React CRUD application using the Hyrule Compendium API as a data sourc
 
 ## Implemented Features
 - Choose between Breath of the Wild and Tears of the Kingdom entries on the home page
-- Paginated grid view (20 per page) for each game
+- Paginated grid view (12 per page) for each game
 - Detail view for each entry, with edit and delete actions
 - Create new entry (in-memory)
 - Edit entry (in-memory, using the same form as create, pre-filled)
@@ -45,7 +45,7 @@ This is a React CRUD application using the Hyrule Compendium API as a data sourc
 
 - **ListPage**
 	- Contains a horizontal nav bar with switch-game link and create entry button right
-	- Shows a paginated grid (20 per page) with BOTW or TOTK entries depending on the route
+	- Shows a paginated grid (12 per page) with BOTW or TOTK entries depending on the route
 	- Each card links to the detail view
 
 - **DetailPage**
